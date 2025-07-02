@@ -1,0 +1,127 @@
+// màu của website
+$primary-300: #2a73dd;
+$primary-200: #2196f3;
+$primary-100: #f5f9fe;
+$dark: black;
+$light: white;
+$yellow: #f9d412;
+
+// màu của chữ
+$text-primary-300: $primary-300;
+$text-primary-200: $primary-200;
+$text-primary-100: $primary-100;
+$text-p: #1d365e;
+$text-gray: #656774;
+$text-dark: $dark;
+$text-light: $light;
+
+// màu của background
+$bg-primary-300: $primary-300;
+$bg-primary-200: $primary-200;
+$bg-primary-100: $primary-100;
+$bg-dark: $dark;
+$bg-light: $light;
+
+// sizing
+$text-base: 16px;
+$text-xl: 18px;
+$text-2xl: 20px;
+$text-3xl: 30px;
+$text-4xl: 40px;
+$text-5xl: 50px;
+$text-6xl: 60px;
+$text-7xl: 70px;
+$text-8xl: 80px;
+
+// font-weight
+$fw-light: 300;
+$fw-normal: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+
+// margin
+$m-0: 0;
+$m-1: 0.25rem; // 4px
+$m-2: 0.5rem; // 8px
+$m-3: 0.75rem; // 12px
+$m-4: 1rem; // 16px
+$m-5: 1.25rem; // 20px
+$m-6: 1.5rem; // 24px
+$m-7: 1.75rem; // 28px
+$m-8: 2rem; // 32px
+$m-9: 2.25rem; // 36px
+
+// padding
+$p-0: 0;
+$p-1: 0.25rem; // 4px
+$p-2: 0.5rem; // 8px
+$p-3: 0.75rem; // 12px
+$p-4: 1rem; // 16px
+$p-5: 1.25rem; // 20px
+$p-6: 1.5rem; // 24px
+$p-7: 1.75rem; // 28px
+$p-8: 2rem; // 32px
+$p-9: 2.25rem; // 36px
+
+// Font
+$font-base: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+// tạo ra các class margin như trong tailwind
+$list-size: 0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem,
+  2.25rem;
+$i: 0;
+@each $size in $list-size {
+  .m-#{$i} {
+    margin: $size;
+  }
+  .p-#{$i} {
+    padding: $size;
+  }
+  $i: $i + 1;
+
+  // tương tự cho các class mt , mr ...
+  /** -> để sử dụng được các class như mt-1, mr-2, ... 
+  có 2 cách:
+  1. gọi trực tiếp trong html như <div class="mt-1"></div>
+  2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+  */
+}
+
+// tạo ra các class màu chữ và màu background
+$list-color: (
+  "primary-300": $primary-300,
+  "primary-200": $primary-200,
+  "primary-100": $primary-100,
+  "dark": $dark,
+  "light": $light,
+  "yellow": #f9d412,
+  "p": #1d365e,
+  "gray": #656774,
+);
+
+@each $name, $color in $list-color {
+  .text-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+// tạo ra các component như button, input, ... mà các giá trị cần thay đổi ($color) là $name của btn
+
+// @each $name, $color in $list-color {
+//   .btn-#{$name} {
+//     @include mBtn(
+//       $text-base,
+//       $fw-normal,
+//       $color,
+//       $color,
+//       $p-2,
+//       1px solid $color,
+//       4px,
+//       $primary-200,
+//       $light
+//     );
+//   }
+// }

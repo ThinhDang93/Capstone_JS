@@ -1,0 +1,22 @@
+// @mixin: tương tự hàm trong js nhưng không có return
+@mixin mText($fs: $text-base, $fw: $fw-normal, $c: $text-gray) // default para
+ {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $c;
+}
+
+@mixin mBtn($fs, $fw, $c, $bg, $p, $bd, $br, $bg-hover, $c-hover, $op: 1) {
+  @include mText($fs, $fw, $c);
+  background: $bg;
+  padding: $p;
+  border: $bd;
+  border-radius: $br;
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: $op;
+    background: $bg-hover;
+    color: $c-hover;
+  }
+}

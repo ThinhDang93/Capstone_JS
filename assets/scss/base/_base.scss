@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+// Sử dụng active bên scss nên set id vì nếu để class thì độ ưu tiên sẽ thấp hơn nên không đè được các style trong file scss
+
+a#active {
+  font-size: $text-2xl;
+  color: $text-primary-300;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background-color: $bg-primary-300;
+    transform: scale(1, 1);
+  }
+}

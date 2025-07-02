@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CapStone JS</title>
+
+    <!-- Font Awsome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Index Css  -->
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">Tạp Hoá BCS 16</a>
+        </div>
+        <nav class="menu">
+          <a href="#" id="active">Home</a><a href="#">About</a>
+          <a href="#">Shop</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <section class="carosel">
+      <div class="container">
+        <div class="car__left">
+          <h4 class="product-title">Tạp Hoá BCS 16</h4>
+          <h2 class="product-alias">Best Tạp Hoá of 2025!</h2>
+          <p class="product-desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+            unde dolore alias perspiciatis libero est.
+          </p>
+          <button class="btn__info">
+            <i class="fa-solid fa-circle-info"></i> More Info
+          </button>
+          <button class="btn__shop">
+            <i class="fa-solid fa-cart-shopping"></i> Shop
+          </button>
+        </div>
+        <div class="car__right">
+          <img src="" alt="" />
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="container product-list">
+        <!-- Danh sách sản phẩm sẽ hiển thị ở đây -->
+        <div id="products" class="products"></div>
+      </div>
+
+      <!-- Giỏ hàng -->
+      <div class="cart" id="cart">
+        <h2>Giỏ hàng</h2>
+        <ul id="cart-items"></ul>
+        <p class="cart-total">Tổng tiền: <span id="cart-total">0</span>₫</p>
+        <button id="close-cart" class="btn-close-cart">Đóng</button>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Bánh tráng Tây Ninh",
+        price: 20000,
+        image: "https://via.placeholder.com/150x100?text=Banh+Trang",
+      },
+      {
+        id: 2,
+        name: "Mì Hảo Hảo",
+        price: 5000,
+        image: "https://via.placeholder.com/150x100?text=Hao+Hao",
+      },
+    ];
+
+    const cart = [];
+    const productsContainer = document.getElementById("products");
+
+    function renderProducts() {
+      products.forEach((product) => {
+        const div = document.createElement("div");
+        div.classList.add("product");
+        div.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>Giá: ${product.price.toLocaleString()}₫</p>
+        <button onclick="addToCart(${product.id})">Mua</button>
+      `;
+        productsContainer.appendChild(div);
+      });
+    }
+
+    function addToCart(productId) {
+      const product = products.find((p) => p.id === productId);
+      const existing = cart.find((item) => item.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+      renderCart();
+      showCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+      cartItems.innerHTML = "";
+      let total = 0;
+      cart.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} x ${item.quantity} = ${(
+          item.quantity * item.price
+        ).toLocaleString()}₫`;
+        cartItems.appendChild(li);
+        total += item.quantity * item.price;
+      });
+      cartTotal.textContent = total.toLocaleString();
+    }
+
+    function showCart() {
+      document.getElementById("cart").style.display = "block";
+    }
+
+    document.getElementById("close-cart").addEventListener("click", () => {
+      document.getElementById("cart").style.display = "none";
+    });
+
+    renderProducts();
+  </script>
+</html>

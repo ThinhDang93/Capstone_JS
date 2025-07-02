@@ -1,0 +1,772 @@
+@charset "UTF-8";
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-1 {
+  margin: 0.25rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-2 {
+  margin: 0.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-3 {
+  margin: 0.75rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-4 {
+  margin: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-5 {
+  margin: 1.25rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-6 {
+  margin: 1.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-7 {
+  margin: 1.75rem;
+}
+
+.p-7 {
+  padding: 1.75rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-8 {
+  margin: 2rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-9 {
+  margin: 2.25rem;
+}
+
+.p-9 {
+  padding: 2.25rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.text-primary-300 {
+  color: #2a73dd;
+}
+
+.bg-primary-300 {
+  background-color: #2a73dd;
+}
+
+.text-primary-200 {
+  color: #2196f3;
+}
+
+.bg-primary-200 {
+  background-color: #2196f3;
+}
+
+.text-primary-100 {
+  color: #f5f9fe;
+}
+
+.bg-primary-100 {
+  background-color: #f5f9fe;
+}
+
+.text-dark {
+  color: black;
+}
+
+.bg-dark {
+  background-color: black;
+}
+
+.text-light {
+  color: white;
+}
+
+.bg-light {
+  background-color: white;
+}
+
+.text-yellow {
+  color: #f9d412;
+}
+
+.bg-yellow {
+  background-color: #f9d412;
+}
+
+.text-p {
+  color: #1d365e;
+}
+
+.bg-p {
+  background-color: #1d365e;
+}
+
+.text-gray {
+  color: #656774;
+}
+
+.bg-gray {
+  background-color: #656774;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+a#active {
+  font-size: 20px;
+  color: #2a73dd;
+  text-decoration: none;
+}
+a#active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  background-color: #2a73dd;
+  transform: scale(1, 1);
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-1 {
+  margin: 0.25rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-2 {
+  margin: 0.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-3 {
+  margin: 0.75rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-4 {
+  margin: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-5 {
+  margin: 1.25rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-6 {
+  margin: 1.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-7 {
+  margin: 1.75rem;
+}
+
+.p-7 {
+  padding: 1.75rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-8 {
+  margin: 2rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.m-9 {
+  margin: 2.25rem;
+}
+
+.p-9 {
+  padding: 2.25rem;
+}
+
+/** -> để sử dụng được các class như mt-1, mr-2, ... 
+có 2 cách:
+1. gọi trực tiếp trong html như <div class="mt-1"></div>
+2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+*/
+.text-primary-300 {
+  color: #2a73dd;
+}
+
+.bg-primary-300 {
+  background-color: #2a73dd;
+}
+
+.text-primary-200 {
+  color: #2196f3;
+}
+
+.bg-primary-200 {
+  background-color: #2196f3;
+}
+
+.text-primary-100 {
+  color: #f5f9fe;
+}
+
+.bg-primary-100 {
+  background-color: #f5f9fe;
+}
+
+.text-dark {
+  color: black;
+}
+
+.bg-dark {
+  background-color: black;
+}
+
+.text-light {
+  color: white;
+}
+
+.bg-light {
+  background-color: white;
+}
+
+.text-yellow {
+  color: #f9d412;
+}
+
+.bg-yellow {
+  background-color: #f9d412;
+}
+
+.text-p {
+  color: #1d365e;
+}
+
+.bg-p {
+  background-color: #1d365e;
+}
+
+.text-gray {
+  color: #656774;
+}
+
+.bg-gray {
+  background-color: #656774;
+}
+
+.btn-primary-300 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2a73dd;
+  background: #2a73dd;
+  padding: 0.5rem;
+  border: 1px solid #2a73dd;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-primary-300:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-primary-200 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2196f3;
+  background: #2196f3;
+  padding: 0.5rem;
+  border: 1px solid #2196f3;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-primary-200:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-primary-100 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f5f9fe;
+  background: #f5f9fe;
+  padding: 0.5rem;
+  border: 1px solid #f5f9fe;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-primary-100:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-dark {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  background: black;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-dark:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-light {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: white;
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-light:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-yellow {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f9d412;
+  background: #f9d412;
+  padding: 0.5rem;
+  border: 1px solid #f9d412;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-yellow:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d365e;
+  background: #1d365e;
+  padding: 0.5rem;
+  border: 1px solid #1d365e;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-p:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+.btn-gray {
+  font-size: 16px;
+  font-weight: 500;
+  color: #656774;
+  background: #656774;
+  padding: 0.5rem;
+  border: 1px solid #656774;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-gray:hover {
+  opacity: 1;
+  background: #2196f3;
+  color: white;
+}
+
+body {
+  --color: black;
+  --bg: #f5f9fe;
+  background-color: white;
+  color: var(--color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  background-color: #f5f9fe;
+  padding: 1.5rem 0;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .logo a {
+  color: #2a73dd;
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.header .container .menu a {
+  margin: 0 0.75rem;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+.header .container .menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2a73dd;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+.header .container .menu a:hover {
+  color: #2a73dd;
+}
+.header .container .menu a:hover::after {
+  transform: scaleX(1);
+}
+.header .container .menu a#active {
+  font-weight: 700;
+}
+
+.carosel {
+  background-image: url(../img/image/product-header-bg.jpg);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 800px;
+  display: flex;
+  align-items: center;
+}
+.carosel .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.carosel .container .car__left {
+  max-width: 500px;
+}
+.carosel .container .car__left .product-title {
+  font-size: 60px;
+  font-weight: 700;
+  color: #2a73dd;
+}
+.carosel .container .car__left .product-alias {
+  font-size: 20px;
+  font-weight: 300;
+  color: #1d365e;
+  margin-top: 0.5rem;
+}
+.carosel .container .car__left .product-desc {
+  font-size: 16px;
+  font-weight: 500;
+  color: #656774;
+  margin: 1rem 0;
+}
+.carosel .container .car__left .btn__info,
+.carosel .container .car__left .btn__shop {
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
+.carosel .container .car__left .btn__info {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2a73dd;
+  background: #f5f9fe;
+  padding: 12px 30px;
+  border: 2px solid #2a73dd;
+  border-radius: 8px;
+  transition: all 0.5s;
+  box-shadow: 0 3px 6px rgba(201, 216, 244, 0.6);
+}
+.carosel .container .car__left .btn__info:hover {
+  opacity: 1;
+  background: #2a73dd;
+  color: white;
+}
+.carosel .container .car__left .btn__shop {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(120deg, #60a4f4, #2a73dd);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+.carosel .container .car__left .btn__shop:hover {
+  opacity: 0.9;
+  background: linear-gradient(120deg, #60a4f4, #2a73dd);
+  color: white;
+}
+.carosel .container .car__right img {
+  width: 400px;
+  max-width: 100%;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 60px 0;
+}
+.product-list .products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.product-list .product {
+  width: 220px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+.product-list .product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.product-list .product img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.product-list .product h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: black;
+}
+.product-list .product p {
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.product-list .product button {
+  padding: 8px 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.product-list .product button:hover {
+  background-color: #217dbb;
+}
+
+.cart {
+  position: fixed;
+  top: 90px;
+  right: 30px;
+  width: 320px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 999;
+}
+.cart h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: black;
+}
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.cart ul li {
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: black;
+}
+.cart .cart-total {
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.cart .btn-close-cart {
+  margin-top: 14px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cart .btn-close-cart:hover {
+  background: #df2e1b;
+}/*# sourceMappingURL=index.css.map */

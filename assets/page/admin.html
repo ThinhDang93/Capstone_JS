@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Product Page</title>
+
+  <!-- Font Awsome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+  <!-- Admin page  -->
+    <link rel="stylesheet" href="../css/admin.css" />
+
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Quản lý</h1>
+
+    <form id="product-form">
+      <input type="text" id="name" placeholder="Tên sản phẩm" required />
+      <input type="number" id="price" placeholder="Giá sản phẩm" required />
+      <input type="text" id="image" placeholder="Link hình ảnh" />
+      <button type="submit">Thêm sản phẩm</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tên</th>
+          <th>Giá</th>
+          <th>Hình ảnh</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="product-list">
+        <!-- Sản phẩm sẽ được thêm tại đây -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const form = document.getElementById("product-form");
+    const list = document.getElementById("product-list");
+
+    let products = [];
+
+    function renderProducts() {
+      list.innerHTML = "";
+      products.forEach((product, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${product.name}</td>
+          <td>${product.price}</td>
+          <td><img src="${product.image}" alt="${product.name}" class="thumb" /></td>
+          <td>
+            <button onclick="editProduct(${index})">Sửa</button>
+            <button onclick="deleteProduct(${index})">Xoá</button>
+          </td>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const price = document.getElementById("price").value;
+      const image = document.getElementById("image").value;
+
+      products.push({ name, price, image });
+      renderProducts();
+      form.reset();
+    });
+
+    function deleteProduct(index) {
+      products.splice(index, 1);
+      renderProducts();
+    }
+
+    function editProduct(index) {
+      const product = products[index];
+      document.getElementById("name").value = product.name;
+      document.getElementById("price").value = product.price;
+      document.getElementById("image").value = product.image;
+      products.splice(index, 1);
+    }
+  </script>
+</body>
+</html>

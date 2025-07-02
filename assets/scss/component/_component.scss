@@ -1,0 +1,58 @@
+$list-size: 0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem,
+  2.25rem;
+$i: 0;
+@each $size in $list-size {
+  .m-#{$i} {
+    margin: $size;
+  }
+  .p-#{$i} {
+    padding: $size;
+  }
+  $i: $i + 1;
+
+  // tương tự cho các class mt , mr ...
+  /** -> để sử dụng được các class như mt-1, mr-2, ... 
+  có 2 cách:
+  1. gọi trực tiếp trong html như <div class="mt-1"></div>
+  2. sử dụng @extend trong scss như .mt-1 { @extend .m-1; }
+  */
+}
+
+// tạo ra các class màu chữ và màu background
+$list-color: (
+  "primary-300": $primary-300,
+  "primary-200": $primary-200,
+  "primary-100": $primary-100,
+  "dark": $dark,
+  "light": $light,
+  "yellow": #f9d412,
+  "p": #1d365e,
+  "gray": #656774,
+);
+
+@each $name, $color in $list-color {
+  .text-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+// tạo ra các component như button, input, ... mà các giá trị cần thay đổi ($color) là $name của btn
+
+@each $name, $color in $list-color {
+  .btn-#{$name} {
+    @include mBtn(
+      $text-base,
+      $fw-normal,
+      $color,
+      $color,
+      $p-2,
+      1px solid $color,
+      4px,
+      $primary-200,
+      $light
+    );
+  }
+}
