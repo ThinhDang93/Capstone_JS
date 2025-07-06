@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Product Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Product Page</title>
 
-  <!-- Font Awsome  -->
+    <!-- Font Awsome  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -14,82 +14,69 @@
       referrerpolicy="no-referrer"
     />
 
-  <!-- Admin page  -->
+    <!-- Admin page  -->
     <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <h1>Quản lý</h1>
 
-</head>
-<body>
-  <div class="admin-container">
-    <h1>Quản lý</h1>
+      <form id="product-form">
+        <input type="text" id="name" placeholder="Tên sản phẩm" />
+        <div class="error" id="error-name"></div>
+        <!-- Thông báo lỗi  -->
+        <input type="text" id="price" placeholder="Giá sản phẩm" />
+        <div class="error" id="error-price"></div>
+        <!-- Thông báo lỗi  -->
+        <input type="text" id="screen" placeholder="Thông số màn hình" />
+        <div class="error" id="error-screen"></div>
+        <!-- Thông báo lỗi  -->
+        <input type="text" id="backCamera" placeholder="Thông số Camera Sau" />
+        <div class="error" id="error-backCamera"></div>
+        <!-- Thông báo lỗi  -->
+        <input
+          type="text"
+          id="frontCamera"
+          placeholder="Thông số Camera Trước"
+        />
+        <div class="error" id="error-frontCamera"></div>
+        <!-- Thông báo lỗi  -->
+        <input type="text" id="desc" placeholder="Mô tả sản phẩm" />
+        <div class="error" id="error-desc"></div>
+        <!-- Thông báo lỗi  -->
+        <input type="text" id="image" placeholder="Link hình ảnh" />
+        <div class="error" id="error-image"></div>
+        <!-- Thông báo lỗi  -->
+        <select id="type">
+          <option value="">Chọn loại sản phẩm</option>
+          <option value="Iphone">Iphone</option>
+          <option value="Samsung">Samsung</option>
+        </select>
+        <div class="error" id="error-type"></div>
+        <!-- Thông báo lỗi  -->
+        <button type="submit">Thêm sản phẩm</button>
+      </form>
 
-    <form id="product-form">
-      <input type="text" id="name" placeholder="Tên sản phẩm" required />
-      <input type="number" id="price" placeholder="Giá sản phẩm" required />
-      <input type="text" id="image" placeholder="Link hình ảnh" />
-      <button type="submit">Thêm sản phẩm</button>
-    </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Hình ảnh</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <!-- Sản phẩm sẽ được thêm tại đây -->
+        </tbody>
+      </table>
+    </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Tên</th>
-          <th>Giá</th>
-          <th>Hình ảnh</th>
-          <th>Hành động</th>
-        </tr>
-      </thead>
-      <tbody id="product-list">
-        <!-- Sản phẩm sẽ được thêm tại đây -->
-      </tbody>
-    </table>
-  </div>
-
-  <script>
-    const form = document.getElementById("product-form");
-    const list = document.getElementById("product-list");
-
-    let products = [];
-
-    function renderProducts() {
-      list.innerHTML = "";
-      products.forEach((product, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${product.name}</td>
-          <td>${product.price}</td>
-          <td><img src="${product.image}" alt="${product.name}" class="thumb" /></td>
-          <td>
-            <button onclick="editProduct(${index})">Sửa</button>
-            <button onclick="deleteProduct(${index})">Xoá</button>
-          </td>
-        `;
-        list.appendChild(row);
-      });
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const price = document.getElementById("price").value;
-      const image = document.getElementById("image").value;
-
-      products.push({ name, price, image });
-      renderProducts();
-      form.reset();
-    });
-
-    function deleteProduct(index) {
-      products.splice(index, 1);
-      renderProducts();
-    }
-
-    function editProduct(index) {
-      const product = products[index];
-      document.getElementById("name").value = product.name;
-      document.getElementById("price").value = product.price;
-      document.getElementById("image").value = product.image;
-      products.splice(index, 1);
-    }
-  </script>
-</body>
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--  -->
+    <!-- Main JS -->
+    <script type="module" src="/Capstone_JS/assets/page/admin.js"></script>
+    <!--  -->
+  </body>
 </html>
