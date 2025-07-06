@@ -2,6 +2,8 @@ import { Product } from "./products.js";
 
 const API_URL = "https://684ba39fed2578be881bf196.mockapi.io/product";
 
+let allProducts = []; // Biến sử dụng cho Dropdown-Filter
+
 axios.get(API_URL)
   .then(response => {
     // response.data là mảng các object sản phẩm (dạng JSON)
@@ -20,7 +22,7 @@ axios.get(API_URL)
       item.desc,
       item.type
     ));
-
+    allProducts = products; 
     // Tiếp tục xử lý: render sản phẩm ra giao diện
     renderProducts(products);
   })
@@ -28,6 +30,16 @@ axios.get(API_URL)
     console.error("Lỗi khi lấy dữ liệu sản phẩm:", error);
   });
 
+  // Chức năng hiển thị sản phẩm đã chọn từ dropdown filter
+
+  document.getElementById("typeFilter").addEventListener("change", function () {
+  const selectedType = this.value;
+  let filteredProducts = allProducts;
+  if (selectedType !== "all") {
+    filteredProducts = allProducts.filter(product => product.type === selectedType);
+  }
+  renderProducts(filteredProducts);
+});
 
 function renderProducts(products) {
   const container = document.getElementById("products");
