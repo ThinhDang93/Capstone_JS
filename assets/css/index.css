@@ -601,7 +601,7 @@ body {
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-  height: 800px;
+  height: auto;
   display: flex;
   align-items: center;
 }
@@ -770,3 +770,22 @@ body {
 .cart .btn-close-cart:hover {
   background: #df2e1b;
 }/*# sourceMappingURL=index.css.map */
+
+/* Style cho nút Dropdown Filter */
+.filter-select {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: 2px solid #2563eb;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.10);
+  color: #2563eb;
+  outline: none;
+  margin: 16px 0;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.filter-select:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
