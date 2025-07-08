@@ -21,13 +21,11 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <a href="#">Tạp Hoá BCS 16</a>
+          <a href="#">Capstone-JS Cường & Thịnh</a>
         </div>
         <nav class="menu">
-          <a href="#" id="active">Home</a><a href="#">About</a>
-          <a href="#">Shop</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact</a>
+          <a href="#" id="active">Home</a>
+          <a href="./assets/page/admin.html">Admin</a>
         </nav>
       </div>
     </header>
@@ -53,14 +51,16 @@
       </div>
     </section>
     <main>
-      <div class="container product-list">
+      <div class="container">
         <!-- Dropdown filter -->
-        <select id="typeFilter">
+        <select id="typeFilter" class="filter-select">
           <option value="all">Tất cả</option>
           <option value="Iphone">Iphone</option>
           <option value="Samsung">Samsung</option>
         </select>
         <!--  -->
+      </div>
+      <div class="container product-list">
         <!-- Danh sách sản phẩm sẽ hiển thị ở đây -->
         <div id="products" class="products"></div>
       </div>
