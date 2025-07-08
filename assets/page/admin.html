@@ -60,8 +60,59 @@
       <table>
         <thead>
           <tr>
-            <th>Tên</th>
-            <th>Giá</th>
+            <th>
+              Tên
+              <!-- Input và Button tìm kiếm sản phẩm theo Tên -->
+              <form
+                id="search-form"
+                style="margin-top: 8px; display: flex; gap: 4px"
+              >
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Nhập tên sản phẩm cần tìm..."
+                  style="
+                    flex: 1;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                  "
+                />
+                <button
+                  type="submit"
+                  style="
+                    background: #3498db;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 4px 10px;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fa fa-search" style="color: #fff"></i>
+                </button>
+              </form>
+              <!-- Hết "Tìm kiếm sản phẩm theo Tên" -->
+            </th>
+            <th>
+              <div style="display: flex; align-items: center; gap: 6px">
+                <span>Giá</span>
+                <!-- Sort sản phẩm theo giá Tăng và Giảm dần -->
+                <select
+                  id="sort-select"
+                  style="
+                    font-size: 13px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    padding: 2px 6px;
+                  "
+                >
+                  <option value="">Sắp xếp</option>
+                  <option value="asc">Tăng dần</option>
+                  <option value="desc">Giảm dần</option>
+                </select>
+                <!-- Hết Sort -->
+              </div>
+            </th>
             <th>Hình ảnh</th>
             <th>Hành động</th>
           </tr>

@@ -5,6 +5,9 @@ const API_URL = "https://684ba39fed2578be881bf196.mockapi.io/product";
 const list = document.getElementById("product-list");
 const form = document.getElementById("product-form");
 const submitBtn = form.querySelector('button[type="submit"]');
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
+const sortSelect = document.getElementById("sort-select");
 
 let products = [];
 let editingId = null; // Lưu id sản phẩm đang cập nhật
@@ -13,14 +16,14 @@ function fetchProducts() {
   axios.get(API_URL)
     .then((response) => {
       products = response.data;
-      renderProducts();
+      renderProducts(products); // Luôn render toàn bộ khi tải trang hoặc thêm/xoá/cập nhật
     })
     .catch(() => alert("Lỗi khi lấy sản phẩm!"));
 }
 
-function renderProducts() {
+function renderProducts(arr) {
   list.innerHTML = "";
-  products.forEach((product) => {
+  arr.forEach((product) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${product.name}</td>
@@ -62,6 +65,32 @@ function renderProducts() {
     };
   });
 }
+
+// Xử lý tìm kiếm sản phẩm theo tên
+searchForm.onsubmit = function (e) {
+  e.preventDefault();
+  const keyword = searchInput.value.trim().toLowerCase();
+  if (keyword === "") {
+    renderProducts(products); // Nếu rỗng, hiển thị lại toàn bộ
+  } else {
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(keyword)
+    );
+    renderProducts(filtered);
+  }
+};
+
+// Xử lý sort sản phẩm theo giá
+sortSelect.onchange = function () {
+  const value = this.value;
+  let arr = [...products];
+  if (value === "asc") {
+    arr.sort((a, b) => Number(a.price) - Number(b.price));
+  } else if (value === "desc") {
+    arr.sort((a, b) => Number(b.price) - Number(a.price));
+  }
+  renderProducts(arr);
+};
 
 // Thêm/Cập nhật sản phẩm
 form.onsubmit = function (e) {
