@@ -56,3 +56,62 @@ $list-color: (
     );
   }
 }
+
+// component Product Card
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #333;
+  }
+  .card__info {
+    align-self: stretch; // để p căn trái
+    text-align: left;
+    flex-grow: 1;
+    p {
+      font-size: 16px;
+      color: #666;
+      margin: 4px 0;
+      text-align: left;
+      align-self: flex-start;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  .btn-add {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 12px;
+    align-self: center;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
