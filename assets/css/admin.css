@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .admin-container {
   max-width: 900px;
   margin: 40px auto;
@@ -5,23 +6,31 @@
   background: #f2f2f2;
   border-radius: 8px;
 }
+
 .admin-container h1 {
   text-align: center;
   color: #2c3e50;
   margin-bottom: 20px;
 }
+
 .admin-container form {
   display: flex;
+  flex-wrap: wrap; /* Cho phép xuống dòng */
   gap: 10px;
   margin-bottom: 20px;
 }
-.admin-container form input {
-  flex: 1;
+
+.admin-container form input,
+.admin-container form select {
+  flex: 1 1 48%; /* 2 input 1 dòng */
+  min-width: 200px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .admin-container form button {
+  flex: 1 1 100%; /* Nút chiếm 1 dòng riêng */
   padding: 8px 16px;
   background-color: #3498db;
   color: #fff;
@@ -29,22 +38,26 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
 .admin-container table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .admin-container table th,
 .admin-container table td {
   padding: 10px;
   border: 1px solid #ccc;
   text-align: left;
 }
+
 .admin-container table img.thumb {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 4px;
 }
+
 .admin-container table button {
   margin-right: 6px;
   padding: 4px 10px;
@@ -52,11 +65,61 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.admin-container table button:first-child {
+
+/* .admin-container table button:first-child {
   background: #f39c12;
   color: white;
-}
-.admin-container table button:last-child {
+} */
+/* .admin-container table button:last-child {
   background: #e74c3c;
   color: white;
+}# sourceMappingURL=admin.css.map */
+.btn-delete {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin: 2px 0;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btn-update {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.2s;
+}
+
+.btn-update:hover {
+  background: #217dbb;
+}
+
+.admin-container table .btn-delete {
+  background: #e74c3c !important;
+  color: #fff !important;
+}
+
+.admin-container table .btn-delete:hover {
+  background: #c0392b !important;
+  color: #fff !important;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-bottom: 4px;
+  min-height: 18px;
 }/*# sourceMappingURL=admin.css.map */
